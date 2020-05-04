@@ -1,0 +1,26 @@
+<script type="text/javascript">
+			let btnS = document.getElementsByClassName('likeBtn');
+
+			for(let i = 0; i < btnS.length;i++){
+				const t0 = performance.now();
+				console.log(t0,  'milliseconds');
+
+			    btnS[i].addEventListener('click', ()=>{
+					closeAll();
+				    btnS[i].nextElementSibling.style.display = 'block';
+
+				    if(btnS[i].lastElementChild.classList[1] == 'fa-plus'){
+				    	btnS[i].lastElementChild.classList.add('fa-minus');
+				    	btnS[i].lastElementChild.classList.remove('fa-plus');
+				    }else{
+				    	btnS[i].lastElementChild.classList.remove('fa-minus');
+				    	btnS[i].lastElementChild.classList.add('fa-plus');
+				    }
+				
+				const t1 = performance.now();    
+				console.log(t1,  'milliseconds');
+				console.log(t1 - t0, 'milliseconds');
+				
+				});
+			}
+ </script>
